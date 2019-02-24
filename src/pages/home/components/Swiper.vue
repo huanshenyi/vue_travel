@@ -15,14 +15,16 @@ export default {
   data: function () {
     return {
       swiperOption: {
-        pagination: {
-          el: '.swiper-pagination'
-        },
-        loop: true
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3000,
+        speed: 300,
+        autoplayDisableOnInteraction: false
       },
       swiperList: [{
         id: '0001',
-        imgUrl: 'https://www.yomiuri-ryokou.co.jp/cruise/antarctic/imgs/antarctic_mv.jpg'
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1808/70/5603e6a535062402.jpg_750x200_2c552f2c.jpg'
       }, {
         id: '0002',
         imgUrl: 'https://www.nishitetsutravel.jp/img/ssindex/main_slide12.png'
