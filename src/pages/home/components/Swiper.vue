@@ -24,10 +24,13 @@ export default {
       },
       swiperList: [{
         id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1808/70/5603e6a535062402.jpg_750x200_2c552f2c.jpg'
+        imgUrl: 'https://www.club-t.com/special/bus/higaeri/images/headline/h_main.jpg'
       }, {
         id: '0002',
         imgUrl: 'https://www.nishitetsutravel.jp/img/ssindex/main_slide12.png'
+      }, {
+        id: '0003',
+        imgUrl: 'https://www.club-t.com/special/japan/sale/bus/higaeri/images/headline/h_main.jpg?20170127'
       }]
     }
   }
