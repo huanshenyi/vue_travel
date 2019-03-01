@@ -3,10 +3,13 @@
     <div class="header-left">
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
-    <div class="header-input"><span class="iconfont">&#xe632;</span>町やスポットを入力してください</div>
-    <div class="header-right">
-      {{this.city}}
-      <span class="iconfont arrow-icon">&#xe64a;</span></div>
+    <div class="header-input"><span class="iconfont">&#xe632;</span>都市名やスポットを入力してください</div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -23,7 +26,7 @@ export default {
   @import "~styles/varibles.styl"
     .header
       display:flex
-      line-height :.86rem
+      line-height :$headerHeight
       background :$bgColor
       color :#fff
       .header-left
@@ -46,6 +49,7 @@ export default {
         width :1.24rem
         float :right
         text-align center
+        color white
         .arrow-icon
          font-size :.24rem
 </style>
