@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-  <swiper :options="swiperOption">
-    <swiper-slide v-for="item in swiperList" :key="item.id">
+  <swiper :options="swiperOption" v-if="showSwiper">
+    <swiper-slide v-for="item in list" :key="item.id">
       <img class="swiper-img" :src="item.imgUrl"/>
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination"></div>
@@ -12,6 +12,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data: function () {
     return {
       swiperOption: {
@@ -21,17 +24,12 @@ export default {
         autoplay: 3000,
         speed: 300,
         autoplayDisableOnInteraction: false
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'https://www.club-t.com/special/bus/higaeri/images/headline/h_main.jpg'
-      }, {
-        id: '0002',
-        imgUrl: 'https://www.nishitetsutravel.jp/img/ssindex/main_slide12.png'
-      }, {
-        id: '0003',
-        imgUrl: 'https://www.club-t.com/special/japan/sale/bus/higaeri/images/headline/h_main.jpg?20170127'
-      }]
+      }
+    }
+  },
+  computed: {
+    showSwiper: function () {
+      return this.list.length
     }
   }
 }

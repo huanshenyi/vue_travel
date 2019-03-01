@@ -4,13 +4,18 @@
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input"><span class="iconfont">&#xe632;</span>町やスポットを入力してください</div>
-    <div class="header-right">町<span class="iconfont arrow-icon">&#xe64a;</span></div>
+    <div class="header-right">
+      {{this.city}}
+      <span class="iconfont arrow-icon">&#xe64a;</span></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    city: String
+  }
 }
 </script>
 

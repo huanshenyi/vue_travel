@@ -2,7 +2,7 @@
   <div>
     <div class="title">おすすめ</div>
     <ul>
-      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item in list" :key="item.id">
         <img class="item-img"  :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -18,34 +18,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data: function () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1602/67/67feeab24cfc82bb90.water.jpg_200x200_af2a01b1.jpg',
-        title: '何処かの水族館',
-        desc: '関係ないけど,アクアマン絶賛上映中',
-        price: '5000'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ea/ea459039354370daa3.img.jpg_200x200_8c51fc3d.jpg',
-        title: '海外旅行',
-        desc: '一週間位だろうな',
-        price: '90000'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_200x200_69e4a80d.jpg',
-        title: 'とあるスキー場',
-        desc: 'そろそろ終わりかな',
-        price: '18900'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/e4/e48857f2ce5e53a7a3.img.jpg_200x200_8ee069fe.jpg',
-        title: 'ジュラシックパーク',
-        desc: '怖い',
-        price: '8900'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
