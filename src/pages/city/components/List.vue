@@ -12,50 +12,21 @@
       <div class="area">
         <div class="title border-topbottom">人気都市</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">東京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">東京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">東京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">東京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">東京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">東京</div>
+          <div class="button-wrapper" v-for="item in hot" :key="item.id">
+            <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
+      <div class="area" v-for="(item, key) in cities" :key="key">
+        <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
-          <div class="item border-bottom">青森市</div>
-          <div class="item border-bottom">相生市</div>
-          <div class="item border-bottom">赤磐市</div>
-          <div class="item border-bottom">赤平市</div>
-          <div class="item border-bottom">網走市</div>
-          <div class="item border-bottom">秋田市</div>
-          <div class="item border-bottom">足利市</div>
-          <div class="item border-bottom">安中市</div>
-          <div class="item border-bottom">上尾市</div>
-          <div class="item border-bottom">朝霞市</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">B</div>
-        <div class="item-list">
-          <div class="item border-bottom">美唄市</div>
-          <div class="item border-bottom">坂東市</div>
-          <div class="item border-bottom">豊前市</div>
-          <div class="item border-bottom">別府市</div>
-          <div class="item border-bottom">豊後大野市</div>
-          <div class="item border-bottom">豊後高田市</div>
+          <div
+            class="item border-bottom"
+            v-for="innerItem of item"
+            :key="innerItem.id"
+          >
+            {{innerItem.name}}
+          </div>
         </div>
       </div>
     </div>
@@ -66,6 +37,10 @@
 import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    hot: Array,
+    cities: Object
+  },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
   }
