@@ -2,15 +2,21 @@
   <div>
     <div class="title">おすすめ</div>
     <ul>
-      <li class="item border-bottom" v-for="item in list" :key="item.id">
-        <img class="item-img"  :src="item.imgUrl" />
-        <div class="item-info">
-          <p class="item-title">{{item.title}}</p>
-          <p class="item-desc">{{item.desc}}</p>
-          <label class="item-price">{{item.price}}円</label>
-          <button class="item-button">詳細確認</button>
-        </div>
-      </li>
+        <router-link
+          tag="li"
+          class="item border-bottom"
+          v-for="item in list"
+          :key="item.id"
+          :to="'/detail/'+item.id"
+        >
+          <img class="item-img"  :src="item.imgUrl" />
+          <div class="item-info">
+            <p class="item-title">{{item.title}}</p>
+            <p class="item-desc">{{item.desc}}</p>
+            <label class="item-price">{{item.price}}円</label>
+            <button class="item-button">詳細確認</button>
+          </div>
+        </router-link>
     </ul>
   </div>
 </template>
