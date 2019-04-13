@@ -9,6 +9,7 @@
           <span class="item-title-icon"></span>
           {{item.title}}
         </div>
+<!--        再帰-->
         <div v-if="item.children" class="item-children">
           <detail-list :list="item.children"></detail-list>
         </div>
@@ -37,7 +38,6 @@ export default {
      margin-right: .1rem;
      background-size: .4rem 3rem;
    .item-title
-      line-height .8rem
       font-size .32rem
       padding 0.2rem
    .item-children
